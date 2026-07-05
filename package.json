@@ -1,0 +1,39 @@
+{
+  "name": "@bybrave/fast-deep-equal2",
+  "version": "4.0.0",
+  "description": "Maintained fork of fast-deep-equal — fast deep equality with the null-prototype crash fixed (#49), a circular-safe variant (#17), Map/Set/TypedArray support built in, ESM, and bundled types",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./react": {
+      "types": "./react.d.ts",
+      "import": "./react.js",
+      "require": "./dist/react.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["index.js", "index.d.ts", "react.js", "react.d.ts", "dist/"],
+  "scripts": {
+    "build": "node build/build.js",
+    "test": "node --test test/*.test.js",
+    "test-types": "tsc --noEmit --strict test/type-declarations.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {"type": "git", "url": "git+https://github.com/bybraveHQ/fast-deep-equal2.git"},
+  "bugs": {"url": "https://github.com/bybraveHQ/fast-deep-equal2/issues"},
+  "homepage": "https://github.com/bybraveHQ/fast-deep-equal2#readme",
+  "keywords": ["fast", "deep", "equal", "equality", "compare", "deepequal", "circular", "react", "esm", "typescript"],
+  "author": "bybrave (https://github.com/bybraveHQ)",
+  "contributors": ["Evgeny Poberezkin (author of the original fast-deep-equal)"],
+  "license": "MIT",
+  "funding": "https://ko-fi.com/bybrave",
+  "engines": {"node": ">=18"},
+  "devDependencies": {"@types/node": "^20.14.0", "esbuild": "^0.23.0", "typescript": "^5.5.0"}
+}
